@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Upload Data of Students to IPFS</title>
+</head>
+<body>
+    <img class="logo" src="images/logo_bg(2).png" alt="Logo" width="200" height="64">
+    <div class="container">    
+        <header class="bg-light text-center p-4">
+            <h1>File Uploaded!</h1>
+        </header>
+        <div class="form-container mt-4 p-4 bg-white border rounded shadow">
+            <div class="file-info">
+                <div class="mb-3">
+                    <p class="file-label">File Name: <%= fileName %></p>
+                </div>
+            </div>
+            <div class="file-info">
+                <p class="file-label">File Hash: <%= fileHash %></p>
+                
+            </div>
+            <div class="file-info">
+                <p class="file-label">account-data: <%= accountData %></p>
+                
+            </div>
+            <div class="center-button">
+                <button class="btn btn-primary" onclick="navigateToLink()">Go to Link</button>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+<script>
+    function navigateToLink() {
+        window.location.href = "https:/ipfs.io/ipfs/<%= fileHash %>";
+    }
+</script>
+</html>
